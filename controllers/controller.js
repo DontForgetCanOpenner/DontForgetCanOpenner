@@ -7,7 +7,7 @@ router.get("/", function(req, res) {
   console.log("The / route got called.");
     res.render("index");
   });
-});
+
 
 // Export routes for server.js to use.
 module.exports = router;
