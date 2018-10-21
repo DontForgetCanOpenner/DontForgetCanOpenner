@@ -13,7 +13,7 @@ var apphurricane = express();
 
 // Static directory
 app.use(express.static("public"));
-apphurricane.use(express.static("public"));
+// apphurricane.use(express.static("public"));
 
 // Routes
 // =============================================================
@@ -21,7 +21,7 @@ apphurricane.use(express.static("public"));
 var routes = require("./controllers/controller.js");
 
 app.use("/", routes);
-apphurricane.use("/about/hurricane", routes);
+// apphurricane.use("/about/hurricane", routes);
 
 
 app.listen(PORT, function() {
