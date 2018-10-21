@@ -1,35 +1,35 @@
-// Dependencies
-var express = require("express");
+// *** Dependencies
+// =============================================================
+var express        = require("express");
+var methodOverride = require("method-override");
+var bodyParser     = require("body-parser");
 
-// Initialize Express
+var PORT = process.env.PORT || 3000;
+
+// Sets up the Express App
+// =============================================================
 var app = express();
 
-// Set up a static folder (public) for our web app
+// Static directory
 app.use(express.static("public"));
 
 // Routes
-// 1. At the root path, send a simple hello world message to the browser
-app.get("/", function(req, res) {
-  res.send("Hello world");
-});
+// =============================================================
+// require("./routes/api-routes.js")(app);
+var routes = require("./controllers/burgers_controller.js");
 
-// 2. At the "/all" path, display every entry in the animals collection
-app.get("/all", function(req, res) {
-  // Query: In our database, go to the animals collection, then "find" everything
-  db.animals.find({}, function(error, found) {
-    // Log any errors if the server encounters one
-    if (error) {
-      console.log(error);
-    }
-    // Otherwise, send the result of this query to the browser
-    else {
-      res.json(found);
-    }
+app.use("/", routes);
+
+
+app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+});
+// Syncing our sequelize models and then starting our Express app
+// =============================================================
+/*
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
   });
 });
-
-
-// Set the app to listen on port 3000
-app.listen(3000, function() {
-  console.log("App running on port 3000!");
-});
+*/
