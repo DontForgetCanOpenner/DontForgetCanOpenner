@@ -9,9 +9,11 @@ var PORT = process.env.PORT || 3000;
 // Sets up the Express App
 // =============================================================
 var app = express();
+var apphurricane = express();
 
 // Static directory
 app.use(express.static("public"));
+apphurricane.use(express.static("public"));
 
 // Routes
 // =============================================================
@@ -19,6 +21,7 @@ app.use(express.static("public"));
 var routes = require("./controllers/controller.js");
 
 app.use("/", routes);
+apphurricane.use("/about/hurricane", routes);
 
 
 app.listen(PORT, function() {

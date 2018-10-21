@@ -3,6 +3,7 @@
    --grey: #f2f2f4;
    --dark-grey: rgba(50, 53, 62, 0.05);
    --black: rgba(60, 60, 60, 1);
+   --blue: rgba(0,0,128,1);
 }
 
 
@@ -10,6 +11,10 @@
 * {
    box-sizing: border-box;
    font-family: "Roboto Slab", serif;
+}
+
+body {
+   background-image: url("https://images-assets.nasa.gov/image/iss041e012113/iss041e012113~orig.jpg");
 }
 
 
@@ -102,7 +107,7 @@ nav ul {
 
 nav ul li {
    list-style: none;
-   background-color: var(--orange);
+   background-color: var(--grey);
    width: 55%;
    text-align: center;
    line-height: 70px;
