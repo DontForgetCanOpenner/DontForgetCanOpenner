@@ -16,7 +16,7 @@ app.use(express.static("public"));
 // Routes
 // =============================================================
 // require("./routes/api-routes.js")(app);
-var routes = require("./controllers/burgers_controller.js");
+var routes = require("./controllers/controller.js");
 
 app.use("/", routes);
 
