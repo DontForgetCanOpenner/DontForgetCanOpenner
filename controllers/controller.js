@@ -9,22 +9,22 @@ router.get("/about/hurricane", function(req, res) {
   });
 
 router.get("/about/wildfires", function(req, res) {
-  console.log("The /about/hurricane route got called.");
+  console.log("The /about/wildfires route got called.");
     res.sendFile(path.join(__dirname, "../public/about/wildfires.html"));
   });
 
 router.get("/about/tornado", function(req, res) {
-  console.log("The /about/hurricane route got called.");
+  console.log("The /about/tornado route got called.");
     res.sendFile(path.join(__dirname, "../public/about/tornado.html"));
   });
 
 router.get("/about/earthquake", function(req, res) {
-  console.log("The /about/hurricane route got called.");
+  console.log("The /about/earthquake route got called.");
     res.sendFile(path.join(__dirname, "../public/about/earthquake.html"));
   });
 
 router.get("/about/flood", function(req, res) {
-  console.log("The /about/hurricane route got called.");
+  console.log("The /about/flood route got called.");
     res.sendFile(path.join(__dirname, "../public/about/flood.html"));
   });
 
